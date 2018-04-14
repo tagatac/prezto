@@ -42,8 +42,10 @@ zstyle ':prezto:load' pmodule \
   'homebrew' \
   'osx' \
   'python' \
-  'ssh' \
-  'tmux' \
+  'tmux'
+# Cygwin does not play nice with `ps -U`.
+[[ ! $(uname) =~ CYGWIN_NT.* ]] && zstyle ':prezto:load' pmodule 'ssh'
+zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
