@@ -63,4 +63,4 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 # Run profile common to all shells.
-source $HOME/.bash_profile
+[[ -f $HOME/.bash_profile ]] && source $HOME/.bash_profile

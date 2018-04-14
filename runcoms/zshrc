@@ -12,5 +12,5 @@ fi
 
 # Customize to your needs...
 export HOSTNAME=$HOST
-source $HOME/.shellrc
+[[ -f $HOME/.shellrc ]] && source $HOME/.shellrc
 precmd() { eval "$PROMPT_COMMAND" }
