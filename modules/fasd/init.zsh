@@ -52,5 +52,5 @@ function fasd_cd {
 # Aliases
 #
 
-# Changes the current working directory interactively.
-alias j='fasd_cd -i'
+# Changes the current working directory.
+alias j='fasd_cd'
