@@ -12,8 +12,7 @@ fi
 
 # Customize to your needs...
 export HOSTNAME=$HOST
-[[ -f $HOME/.shellrc ]] && source $HOME/.shellrc
+test -f $HOME/.shellrc && source $HOME/.shellrc
 precmd() { eval "$PROMPT_COMMAND" }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
