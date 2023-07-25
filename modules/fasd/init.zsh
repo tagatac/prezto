@@ -53,5 +53,7 @@ function fasd_cd {
 # Aliases
 #
 
-# Changes the current working directory.
-alias j='fasd_cd'
+if ! zstyle -t ':prezto:module:fasd:alias' skip; then
+  # Changes the current working directory.
+  alias j='fasd_cd'
+fi
