@@ -33,6 +33,7 @@
 pmodload 'helper'
 
 function prompt_sorin_async_callback {
+  _prompt_tagatac_aws="%B%F{5}${AWS_PROFILE:-default}%f%b:%B%F{6}${AWS_REGION:-default}%f%b"
   case $1 in
     prompt_sorin_async_git)
       # We can safely split on ':' because it isn't allowed in ref names.
@@ -172,7 +173,7 @@ function prompt_sorin_setup {
   PROMPT='%B%F{10}%n@%m%f %F{4}${_prompt_sorin_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
   RPROMPT='$python_info[virtualenv]${editor_info[overwrite]}%(?:: %F{1}'
   RPROMPT+=${show_return}
-  RPROMPT+='%f)${VIM:+" %B%F{6}V%f%b"}${_prompt_sorin_git}'
+  RPROMPT+='%f)${VIM:+" %B%F{6}V%f%b"}${_prompt_tagatac_aws} ${_prompt_sorin_git}'
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
 
