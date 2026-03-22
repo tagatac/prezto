@@ -38,19 +38,20 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'git' \
+  'history-substring-search' \
+  'prompt' \
+  'autosuggestions' \
+  'aws' \
   'docker' \
   'dpkg' \
   'fasd' \
+  'git' \
   'homebrew' \
   'osx' \
   'python' \
-  $([[ ! $(uname) =~ CYGWIN_NT.* ]] && echo 'ssh') \
-  'tmux' \
+  'ssh' \
   'syntax-highlighting' \
-  'history-substring-search' \
-  'autosuggestions' \
-  'prompt'
+  'tmux'
 
 #
 # Autosuggestions
