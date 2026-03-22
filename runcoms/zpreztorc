@@ -41,7 +41,6 @@ zstyle ':prezto:load' pmodule \
   'history-substring-search' \
   'prompt' \
   'autosuggestions' \
-  'aws' \
   'docker' \
   'dpkg' \
   'fasd' \
