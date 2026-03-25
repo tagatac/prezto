@@ -33,6 +33,7 @@
 pmodload 'helper'
 
 function prompt_sorin_async_callback {
+  prompt_sorin_async_aws
   case $1 in
     prompt_sorin_async_git)
       # We can safely split on ':' because it isn't allowed in ref names.
@@ -72,6 +73,12 @@ function prompt_sorin_async_git {
   fi
 }
 
+function prompt_sorin_async_aws {
+  if (( $+functions[aws-info] )); then
+    aws-info
+  fi
+}
+
 function prompt_sorin_async_tasks {
   # Initialize async worker. This needs to be done here and not in
   # prompt_sorin_setup so the git formatting can be overridden by other prompts.
@@ -108,10 +115,6 @@ function prompt_sorin_precmd {
   # Run python info (this should be fast and not require any async)
   if (( $+functions[python-info] )); then
     python-info
-  fi
-
-  if (( $+functions[aws-info] )); then
-    aws-info
   fi
 
   prompt_sorin_async_tasks
