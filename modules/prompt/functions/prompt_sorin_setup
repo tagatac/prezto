@@ -180,7 +180,9 @@ function prompt_sorin_setup {
   _prompt_sorin_pwd=''
 
   # Define prompts.
-  PROMPT='%B%F{10}%n@%m%f %F{4}${_prompt_sorin_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
+  _prompt_sorin_user_color=${${SSH_TTY:+"9"}:-"10"}
+  _prompt_sorin_host_color=${${SSH_TTY:+"3"}:-"10"}
+  PROMPT='%B%F{${_prompt_sorin_user_color}}%n%F{7}@%F{${_prompt_sorin_host_color}}%m%f %F{4}${_prompt_sorin_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
   RPROMPT='$aws_info[profile]$aws_info[region] '
   RPROMPT+='$python_info[virtualenv]${editor_info[overwrite]}%(?:: %F{1}'
   RPROMPT+=${show_return}
